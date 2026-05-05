@@ -1,0 +1,837 @@
+:root {
+    --certo-blue: #4335DE;
+    --certo-dark-blue: #02033B;
+    --certo-yellow: #ffc107;
+    --bg-white: #FFFFFF;
+    --bg-light-blue: #E7EFFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--certo-dark-blue);
+    overflow-x: hidden;
+}
+
+/* NAVBAR & HERO COMBINED BACKGROUND */
+/* Is se navbar aur hero ke beech koi line nahi aayegi */
+.navbar,
+.hero-section {
+    background: radial-gradient(circle at center, var(--bg-white) 0%, var(--bg-light-blue) 100%) !important;
+    border: none !important;
+}
+
+.navbar {
+    padding: 20px 0;
+}
+
+.nav-link {
+    color: var(--certo-dark-blue) !important;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+/* BUTTONS */
+.btn-primary-certo {
+    background-color: var(--certo-blue);
+    color: white !important;
+    border-radius: 50px;
+    padding: 8px 25px;
+    border: none;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-certo-yellow {
+    background-color: var(--certo-yellow);
+    color: var(--certo-dark-blue);
+    border-radius: 50px;
+    padding: 17px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.btn-outline-android {
+    border: 3px solid var(--certo-dark-blue);
+    background: transparent;
+    color: var(--certo-dark-blue);
+    border-radius: 50px;
+    padding: 17px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* HERO SECTION */
+.hero-section {
+    display: flex;
+    align-items: stretch;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+.hero-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    /* PEHLE YAHAN #FFFFFF THA, AB TRANSPARENT HAI TAAKE GRADIENT DIKHE */
+    background: transparent !important;
+    padding: 60px 40px 60px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-left-inner {
+    max-width: 700px;
+}
+
+.hero-left h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    color: var(--certo-dark-blue);
+}
+
+.hero-left p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+.hero-right {
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.hero-frame {
+    position: relative;
+    width: 100%;
+    background-color: var(--certo-blue);
+    padding: 20px 0 0 20px;
+}
+
+.hero-bg-layer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 0 0 0;
+}
+
+.hero-phone-layer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 54%;
+    width: 50%;
+    max-width: 250px;
+    z-index: 10;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.3));
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-left {
+        padding: 50px 24px;
+        text-align: center;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+    }
+
+    .hero-right {
+        height: 420px;
+    }
+
+    .hero-phone-layer {
+        left: 25%;
+        /* Mobile par center karne ke liye adjust kiya */
+        width: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+
+    .hero-right {
+        height: 300px;
+    }
+}
+
+.testimonials-section {
+    background-color: #FFC247;
+    overflow: hidden;
+    width: 100%;
+}
+
+.stars {
+    color: #FFC247;
+    /* This turns the text stars yellow */
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    /* Adds a nice gap between stars */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    /* Taake side waale cards container se bahar nikal sakein */
+}
+
+.testimonial-card {
+    background: #FFFFFF !important;
+    /* Forcefully white background */
+    opacity: 1 !important;
+    /* Transparency khatam karne ke liye */
+    border-radius: 30px;
+    padding: 35px;
+    width: 420px;
+    height: 306px;
+    flex: 0 0 auto;
+    /* Card ko shrink hone se rokta hai */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Featured Label Size */
+.featured-label {
+    font-size: 1.2rem;
+    color: #02033B;
+    white-space: nowrap;
+}
+
+/* Logos Size Fix */
+.brand-logo {
+
+    height: 35px !important;
+    width: auto;
+    object-fit: contain;
+
+    filter: brightness(0) saturate(100%) invert(10%) sepia(90%) saturate(1000%) hue-rotate(220deg);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+}
+
+/* Row container ki width Figma ke mutabiq */
+.featured-row {
+    max-width: 1248px;
+    margin: 0 auto;
+}
+
+/* Section Background */
+.certo-about-section {
+    background-color: #FFFFFF;
+}
+
+/* Primary Button (Yellow) */
+.btn-primary-custom {
+    background-color: #FFC247;
+    color: #02033B;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 35px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e6af40;
+    transform: translateY(-2px);
+}
+
+/* Secondary Button (Outlined) */
+.btn-secondary-custom {
+    background-color: transparent;
+    color: #02033B;
+    border: 2px solid #02033B;
+    border-radius: 50px;
+    padding: 12px 35px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #02033B;
+    color: #FFFFFF;
+}
+
+
+
+.certo-img-frame {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    /* Ensure no background-color or border is set here */
+    background: none !important;
+    padding: 0;
+}
+
+/* This is the ONLY yellow box */
+.certo-img-frame::before {
+    content: "";
+    position: absolute;
+    /* This moves the box to the bottom-right offset */
+    bottom: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background-color: #FFC247;
+    /* Figma Brand Yellow */
+    border-radius: 20px;
+    z-index: -1;
+    /* Places it behind the image */
+}
+
+.certo-img-frame img {
+    display: block;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    /* Ensures the image stays on top */
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+/* =============================================
+   REFINED FEATURE CARD (IMAGE 4 EXACT MATCH)
+   ============================================= */
+
+/* Main White Box containing the grid & buttons */
+
+
+/* Background wrapper (poore page ka color) */
+.features-section-wrapper {
+    background: radial-gradient(circle at center, #FFFFFF 0%, #E7EFFA 100%) !important;
+    padding: 100px 0;
+    width: 100%;
+}
+
+/* White Box (Feature Card) - Iska background ab fix hai */
+.feature-main-card {
+    background-color: #FFFFFF !important;
+    /* Box ka apna color solid white */
+    border-radius: 48px;
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 60px 50px;
+
+    /* Box shadow jo Figma mein di gayi hai */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+
+    border: none;
+    /* Koi blue boundary nahi aayegi */
+    position: relative;
+    z-index: 5;
+    /* Taake ye background se upar nazar aaye */
+}
+
+/* HEADING: Ab white box ke BAHAR hai HTML mein.
+   Isy customize kar rahe hain.
+*/
+.main-section-heading {
+    color: #02033B;
+    font-weight: 800;
+    font-size: 2.3rem;
+    margin-bottom: -10px;
+    /* Reduces space between heading and box */
+}
+
+/* Feature Box Layout inside the card */
+.feature-box {
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.feature-box .icon-img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feature-box h3 {
+    color: #02033B;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.feature-box p {
+    color: #585E77;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Buttons at the bottom of the card */
+.feature-btn-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+
+
+
+
+/* =============================================
+   UPDATE: WHITE CARD BUTTONS (SIMPLE P FIX)
+   ============================================= */
+
+/* Main button row adjustment (Inside the white box) */
+.feature-btn-row {
+    margin-top: 40px;
+    /* Space above buttons */
+    display: flex;
+    gap: 15px;
+    /* Space between buttons */
+    justify-content: center;
+    /* Center them horizontally */
+}
+
+/* PRIMARY BUTTON (Yellow) 
+   Apply this class to the iPhone link.
+*/
+.btn-certo-primary {
+    background-color: #ffc247;
+    /* Brand Yellow */
+    color: #02033B !important;
+    /* Bold Navy Text */
+    font-weight: 800;
+    /* Extra bold text from Figma */
+    font-size: 1rem;
+    padding: 14px 30px;
+    /* Precise padding from Figma */
+    border-radius: 50px;
+    /* Full pill shape */
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+    /* Removes link underline */
+    transition: all 0.3s ease;
+}
+
+.btn-certo-primary:hover {
+    background-color: #fdb31f;
+    /* Darker yellow on hover */
+    transform: translateY(-2px);
+    /* Slight lift */
+}
+
+/* Arrow Icon inside the primary button */
+.btn-certo-primary span.arrow {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    line-height: 0;
+}
+
+
+/* SECONDARY BUTTON (Outline)
+   Apply this class to the Android link.
+*/
+.btn-certo-outline {
+    background-color: transparent;
+    color: #02033B !important;
+    /* Bold Navy Text */
+    font-weight: 800;
+    /* Extra bold text */
+    font-size: 1rem;
+    padding: 14px 30px;
+    border-radius: 50px;
+    border: 2px solid #02033B;
+    /* Thick navy border */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+    /* Removes link underline */
+    transition: all 0.3s ease;
+}
+
+.btn-certo-outline:hover {
+    background-color: #02033B;
+    /* Solid navy on hover */
+    color: #ffffff !important;
+    /* White text on hover */
+}
+
+
+
+
+/* --- STORY & HELP SECTION --- */
+.story-help-section {
+    background-color: #FFFFFF !important;
+    /* Poora background White */
+    padding: 84px 0;
+    /* Figma padding */
+}
+
+/* Yellow Box (Read our story) - FIXED */
+.story-card-wrapper {
+    background-color: #FFC247;
+    /* Yellow Box wapis yellow hai */
+    border-radius: 48px;
+    /* Figma Specs */
+    width: 460px;
+    /* Figma Width */
+    height: 296px;
+    /* Figma Height */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+
+/* Yellow Box Text */
+.story-card-wrapper h3,
+.story-card-wrapper p {
+    color: #02033B;
+    /* Dark Navy text */
+}
+
+/* Purple Button inside Yellow Box */
+.btn-purple {
+    background-color: #4335DE;
+    /* Purple Button */
+    color: #ffffff !important;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+}
+
+
+
+/* About Us Purple Button - Color from Image 9 & 13 */
+.btn-purple {
+    background-color: #4335DE;
+    /* Brand Purple */
+    color: #ffffff !important;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    transition: 0.3s ease;
+    border: none;
+}
+
+.btn-purple:hover {
+    background-color: #3529b5;
+    transform: translateY(-2px);
+}
+
+/* Blue CTA Section - Background from Image 9 & 10 */
+.blue-cta-section {
+    background-color: #4335DE;
+    /* Matching Purple/Blue Background */
+    padding: 84px 300px;
+    /* Spacing from Image 4 */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+
+
+/* Container Background */
+.insights-section {
+    background-color: #F3F8FF;
+    padding: 84px 0;
+}
+
+/* Card Fixed Size Specs from Image 16 */
+.insight-card-fixed {
+    background: #FFFFFF;
+    width: 320px;
+    /* Width from Image 16 */
+    height: 534px;
+    /* Height from Image 16 */
+    border-radius: 48px;
+    /* Radius from Image 16 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+/* Image styling inside the fixed box */
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* Fixed image height */
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #FFFFFF;
+    color: #02033B;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* Content spacing */
+.card-content {
+    padding: 30px;
+    padding-bottom: 54px;
+    /* Bottom padding from Image 16 */
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    color: #02033B;
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #585E77;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* View All Insights Button */
+.btn-view-all {
+    background-color: #FFC247;
+    color: #02033B !important;
+    border-radius: 50px;
+    padding: 15px 35px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/* Color Palette */
+:root {
+    --certo-navy: #02033b;
+    --certo-yellow: #ffc247;
+    --certo-text-muted: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer Main Styling */
+.certo-footer {
+    background-color: #02033B;
+    padding: 80px 0 40px 0;
+    color: white;
+}
+
+/* Newsletter Box with Watermark */
+.newsletter-box {
+    background-color: #FFC247;
+    border-radius: 30px;
+    padding: 40px;
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    overflow: hidden;
+    color: #02033B;
+}
+
+/* Newsletter Box with Watermark */
+.newsletter-box {
+    background-color: #FFC247;
+    /* Yellow color */
+    border-radius: 35px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    color: #02033B;
+    max-width: 440px;
+    z-index: 1;
+}
+
+/* Watermark Image Addition */
+
+.newsletter-box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Perfect centering */
+    width: 250px;
+    /* Image size */
+    height: 250px;
+
+
+    background-image: url('C:\Users\Dell Latitude E5440\Desktop\VP_Lab_Assignment3_247295_Unsa Jabeen\assets\images\form#newsletter-signup-footer-form_before.png') !important;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+    opacity: 0.3;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* White Placeholder Box styling */
+.white-placeholder-box {
+    background: white;
+    width: 320px;
+    height: 100px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* Link Dash Effect (The Yellow Dashes) */
+.footer-nav-links li a {
+    color: #FFC247;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-nav-links li a::before {
+    content: "—  ";
+    /* Dash before link */
+    color: #FFC247;
+}
+
+
+.newsletter-box h4,
+.newsletter-box p,
+.input-group-custom {
+    position: relative;
+    z-index: 1;
+}
+
+/* Input Group Styling */
+.input-group-custom {
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.input-group-custom input {
+    border: none;
+    padding: 12px 20px;
+    flex-grow: 1;
+    outline: none;
+}
+
+.input-group-custom button {
+    background: #02033B;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 0 50px 50px 0;
+}
+
+/* White Placeholder Box (Image mein jo dikh raha hai) */
+.white-placeholder-box {
+    background-color: white;
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* Navigation List dash effect */
+.footer-nav-list li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.footer-nav-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #FFC247;
+}
+
+.nav-footer-link {
+    color: #FFC247;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+
+    .newsletter-box,
+    .white-placeholder-box {
+        max-width: 100%;
+        margin-left: 0;
+        align-self: flex-start;
+    }
+
+    .certo-footer {
+        text-align: left;
+    }
+}
